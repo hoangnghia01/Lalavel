@@ -16,16 +16,15 @@
         // echo ($key+1).". <span style='color: $color;'>" . $animal . "</span> <br>";
     // }
     ?> -->
-
     @php
         $arrayAnimal = ['Meo', 'Cho','Heo','Ca'];
     @endphp
     @foreach($arrayAnimal as $key => $animal)
-        {{ $animal }}
-        @if (($key+1)%2 === 0)
-            {!! ". <span style='color: red;'>" . $animal . "</span> <br>" !!}
-        @else
-            {!! ". <span style='color: green;'>" . $animal . "</span> <br>" !!}
+        {{-- {{ $animal }} --}}
+        @if ($loop->even)
+            {!! $loop->iteration ."<span style='color: red;'>" . $animal . "</span> <br>" !!}
+        @elseif($loop->oll)
+            {!! $loop->iteration ."<s pan style='color: green;'>" . $animal . "</span> <br>" !!}
         @endif
     @endforeach
 
